@@ -1,0 +1,61 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body onload="draw()">
+<canvas id="sketch" width="300" height="300">
+</canvas>
+<script>
+
+function draw() {
+
+var sketch = document.getElementById('sketch');
+
+var context = sketch.getContext("2d");
+
+// if 1 circle turn, if not 2 then square
+var squareOrCircle = 1;
+
+
+for (var i = 0; i < 10; i = i + 1){
+	
+	if( squareOrCircle === 1){
+
+
+		context.fillStyle = "#44dd77";	
+
+		context.beginPath();
+   
+		context.arc( (i * 30) + 7.5 , 118.5, 7.5 , 0, 2 * Math.PI);
+
+		context.closePath();
+
+		context.fill();
+
+		console.log("square");
+
+		squareOrCircle = 2;
+
+	
+	}else{
+	
+
+
+		context.fillStyle = "#ddcc22";
+
+
+		context.fillRect( i * 30 , 110, 15, 15);
+
+
+		console.log("square");
+
+
+		squareOrCircle = 1;
+
+}
+}
+    
+}
+</script>
+</body>
+</html>
