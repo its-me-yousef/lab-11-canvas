@@ -1,0 +1,43 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body onload="draw()">
+<canvas id="sketch" width="900" height="900">
+</canvas>
+<script>
+
+function draw() {
+
+var numOfCircles = parseInt(prompt("How many circles in a row do you want?"));
+
+var splitScreen = 800 / numOfCircles;
+
+var radius = splitScreen / 2;
+
+var padding = 100 / numOfCircles;
+
+for(var i = 0; i < numOfCircles; i++){
+
+	//Circle 1
+	var sketch = document.getElementById('sketch');
+
+	var context = sketch.getContext("2d");	
+
+	context.fillStyle = "#81d5e6";
+
+
+	context.beginPath();
+   
+	context.arc( ((i * splitScreen) + radius) + (padding * i)  , 450, radius, 0, 2 * Math.PI);
+
+	context.closePath();
+
+	context.fill();
+
+}
+    
+}
+</script>
+</body>
+</html>

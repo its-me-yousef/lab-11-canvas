@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body onload="draw()">
+<canvas id="sketch" width="900" height="900">
+</canvas>
+<script>
+
+function draw() {
+
+context.fillStyle = "#81d5e6";
+
+for(var i = 0; i < 5; i++){
+
+	//Circle 1
+	var sketch = document.getElementById('sketch');
+
+	var context = sketch.getContext("2d");	
+
+	((i * splitScreen) + radius) + (padding * i)
+
+	context.beginPath();
+   
+	context.arc( 450 , (i * 180) + 70 , 70, 0, 2 * Math.PI);
+
+	context.closePath();
+
+	context.fill();
+
+}
+    
+}
+</script>
+</body>
+</html>

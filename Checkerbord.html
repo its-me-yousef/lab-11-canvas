@@ -1,0 +1,53 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body onload="draw()">
+<canvas id="sketch" width="800" height="800">
+</canvas>
+<script>
+
+function draw() {
+
+
+var xSplitScreen = 800 / 8;
+
+
+var ySplitScreen = 800 / 8;
+
+
+		
+var sketch = document.getElementById('sketch');
+
+var context = sketch.getContext("2d");
+
+//white = one anything else is black
+var blackOrWhite = 1;
+for(var i = 0; i < 8; i++){
+
+		if(blackOrWhite === 1){
+			blackOrWhite = 0;
+		}else{
+			blackOrWhite = 1;
+		}	
+
+	for(var j = 0; j < 8;j++){
+
+
+		if(blackOrWhite === 1){
+			context.fillStyle = "#ffffff";
+			blackOrWhite = 0;
+		}else{
+			context.fillStyle = "#000000";
+			blackOrWhite = 1;
+		}	
+
+	context.fillRect((i * xSplitScreen) ,(j* ySplitScreen) ,100,100)
+	}
+
+}
+    
+}
+</script>
+</body>
+</html>

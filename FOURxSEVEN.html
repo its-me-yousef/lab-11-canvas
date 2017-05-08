@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body onload="draw()">
+<canvas id="sketch" width="900" height="900">
+</canvas>
+<script>
+
+function draw() {
+
+
+var xSplitScreen = 800 / 4;
+
+
+var ySplitScreen = 800 / 7;
+
+var radius = ySplitScreen / 2;
+
+
+for(var i = 0; i < 4; i++){
+	for(var j = 0; j < 7;j++){
+		
+		var sketch = document.getElementById('sketch');
+
+		var context = sketch.getContext("2d");	
+
+		context.fillStyle = "#92e888";
+
+
+		context.beginPath();
+   
+		context.arc( ( (xSplitScreen * i) + radius ) + (i * 10) , ( (j * ySplitScreen) + radius ) + (j * 10), radius, 0, 2 * Math.PI);
+
+		context.closePath();
+
+		context.fill();
+	}
+
+}
+    
+}
+</script>
+</body>
+</html>
